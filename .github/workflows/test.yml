@@ -1,0 +1,24 @@
+name: Test cask
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Tap this checkout
+        run: brew tap chandlerklein/tap "$GITHUB_WORKSPACE"
+      - name: Install and run
+        run: |
+          brew install --cask chandlerklein/tap/ec
+          ec --version
+          ec --help
+      - name: Uninstall
+        run: brew uninstall --cask ec
