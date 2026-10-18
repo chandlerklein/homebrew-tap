@@ -4,16 +4,16 @@ cask "ec" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/ec"]
   end
 
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     on_arm do
-      sha256 "0404284ec4cd2bf8c1c65fe7fd45c7efaf098c95647f8157558ffbe478b6ea1a"
-      url "https://github.com/chandlerklein/everybody-codes-cli/releases/download/v0.1.1/ec_#{version}_darwin_arm64.tar.gz"
+      sha256 "b42733daf7f45ae7436c898ed78a18b0aad7b04a6b65a6f8b70001b93bd12e43"
+      url "https://github.com/chandlerklein/everybody-codes-cli/releases/download/v#{version}/ec_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "4023e67760f93371b15822781d15e2f6daf97dc7285281f04567a9d6f281e278"
-      url "https://github.com/chandlerklein/everybody-codes-cli/releases/download/v0.1.1/ec_#{version}_darwin_amd64.tar.gz"
+      sha256 "4d6fd5518080d0864ad49abaa3d1369e45a97d2090967a2e18bd8efdb31bcf00"
+      url "https://github.com/chandlerklein/everybody-codes-cli/releases/download/v#{version}/ec_#{version}_darwin_amd64.tar.gz"
     end
   end
 
